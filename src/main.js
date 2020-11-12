@@ -1,22 +1,16 @@
-// import App from './App.svelte';
+import BarChart from './BarChart.svelte'
 
-// const app = new App({
-// 	target: document.body,
-// 	props: {
-// 		name: 'world'
-// 	}
-// });
+const characteristics = ['Power', 'Stamina', 'Intelligence', 'Focus']
 
-// export default app;
-
-import Bar from './Bar.svelte'
-
-const bar = new Bar({
+const barChart = new BarChart({
   target: document.body,
   props: {
-    name: 'Max',
-    value: '20',
+    title: 'Characteristics bar chart',
   },
 })
 
-export default app
+characteristics.forEach((entry) => {
+  barChart.addOption(entry)
+})
+
+export default barChart
