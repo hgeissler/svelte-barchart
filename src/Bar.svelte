@@ -49,5 +49,6 @@
   .bar > div > div {
     background: #2c393f;
     display: block;
+    transition: width .3s ease-out;
   }
 </style>

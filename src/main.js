@@ -13,4 +13,7 @@ characteristics.forEach((entry) => {
   barChart.addOption(entry)
 })
 
+barChart.update('Power', 80)
+barChart.update('Stamina', 50)
+
 export default barChart

@@ -5,6 +5,11 @@
   export function addOption(option) {
     data = [...data, { option, value: 0, id: data.length }]
   }
+  export function update(option, value) {
+    const index = data.findIndex((d) => d.option === option)
+    data[index] = { ...data[index], value}
+    data.sort((a, b) => b.value - a.value)
+  }
 </script>
 
 <article>
