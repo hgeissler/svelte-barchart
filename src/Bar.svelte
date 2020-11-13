@@ -4,7 +4,7 @@
   export let name = '';
   export let value = 0;
 
-  $: width = Math.round(100 * value / MAX_VALUE)
+  $: width = Math.round(100 * value / MAX_VALUE);
 </script>
 
 <div class="bar">
@@ -32,7 +32,7 @@
 
   .bar p:first-child {
     margin-right: 1em;
-    min-width: 4em;
+    min-width: 5em;
     width: 10%;
   }
 
@@ -54,5 +54,14 @@
     background: #2c393f;
     display: block;
     transition: width .3s .5s ease-out;
+  }
+
+  div > p:last-child {
+    min-width: 2.4em;
+    text-align: right;
+  }
+
+  div > p:first-child {
+    margin: 0 1em;
   }
 </style>
