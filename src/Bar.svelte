@@ -1,12 +1,16 @@
 <script>
-  export let name = ''
-  export let value = 0
+  const MAX_VALUE = 100;
+
+  export let name = '';
+  export let value = 0;
+
+  $: width = Math.round(100 * value / MAX_VALUE)
 </script>
 
 <div class="bar">
   <p>{name}</p>
   <div>
-    <div style="width:{value}%;"></div>
+    <div style="width:{width}%;"></div>
   </div>
   <p>{value}</p>
 </div>
@@ -49,6 +53,6 @@
   .bar > div > div {
     background: #2c393f;
     display: block;
-    transition: width .3s ease-out;
+    transition: width .3s .5s ease-out;
   }
 </style>

@@ -1,5 +1,7 @@
 <script>
   import Bar from './Bar.svelte'
+  import { flip } from 'svelte/animate'
+
   export let title
   let data = []
   export function addOption(option) {
@@ -18,8 +20,10 @@
   <div>
     <h3>{title}</h3>
   </div>
-  {#each data as entry}
-    <Bar name={entry.option} value={entry.value}></Bar>
+  {#each data as entry, index (entry.id)}
+    <div animate:flip="{{ duration: 500 }}">
+      <Bar name={entry.option} value={entry.value}></Bar>
+    </div>
   {/each}
   <p>Gesamtpunktzahl:</p>
   <p>{total}</p>
