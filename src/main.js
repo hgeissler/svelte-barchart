@@ -5,7 +5,7 @@ const characteristics = ['Power', 'Stamina', 'Intelligence', 'Focus']
 const barChart = new BarChart({
   target: document.body,
   props: {
-    title: 'Characteristics bar chart',
+    title: 'Characteristics Bar Chart',
   },
 })
 

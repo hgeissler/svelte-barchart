@@ -8,8 +8,10 @@
   export function update(option, value) {
     const index = data.findIndex((d) => d.option === option)
     data[index] = { ...data[index], value}
-    data.sort((a, b) => b.value - a.value)
+    data.sort((a, b) => b.value - a.value) 
   }
+
+  $: total = data.reduce((acc, actual) => acc + actual.value, 0); 
 </script>
 
 <article>
@@ -19,4 +21,6 @@
   {#each data as entry}
     <Bar name={entry.option} value={entry.value}></Bar>
   {/each}
+  <p>Gesamtpunktzahl:</p>
+  <p>{total}</p>
 </article>
